@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    
+        height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .fan {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .base {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 20px;
+    background-color: #444;
+    border-radius: 4px;
+  }
+  
+  .stand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 100px;
+    background-color: #444;
+  }
+  
+  .fan-blades {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: rotate-fan 1s linear infinite;
+  }
+  
+  .blade {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 60px;
+    background-color: #444;
+    transform-origin: 50% 100%;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .blade:nth-child(1) {
+    transform: rotate(0deg);
+  }
+  
+  .blade:nth-child(2) {
+    transform: rotate(90deg);
+  }
+  
+  .blade:nth-child(3) {
+    transform: rotate(180deg);
+  }
+  
+  .blade:nth-child(4) {
+    transform: rotate(270deg);
+  }
+  
+  @keyframes rotate-fan {
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  .controls {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
